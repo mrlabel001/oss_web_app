@@ -3,6 +3,19 @@ Content-Type: application/json
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwODkzODM5MywianRpIjoiZjNmM2M5ZWYtYWU1My00ZWI2LTkxM2EtNjFlZGQyMzc2YTA5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzA4OTM4MzkzLCJjc3JmIjoiMmVkMGI0OGUtYWVhNS00YzUzLWJjMzgtZGY2ZTllNDM5NGIyIiwiZXhwIjoxNzA4OTQ1NTkzLCJhZG1pbiI6IjE0NjAzIn0.PyUOCeiGQOpkaVe-hq47b6ecsizi3WKXfgKoymLth_A
 
 
+POST http://localhost:5000/signup
+Content-Type: application/json
+
+{
+  "first_name": "alex",
+  "last_name": "mosomi",
+  "email": "alex@gmail.com",
+  "file_no": "14000",
+  "year": "2019",
+  "admin": "14000",
+  "password": "alex"
+}
+
 POST http://localhost:5000/login
 Content-Type: application/json
 
@@ -14,6 +27,42 @@ Content-Type: application/json
 GET http://localhost:5000/logout
 Content-Type: application/json
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwODkzOTI0NSwianRpIjoiMTdlODIyNzUtOGUwZC00MGZlLWIyYzItN2NhOWYxMmU1ZDNlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzA4OTM5MjQ1LCJjc3JmIjoiZTM0ODZiNzItMjExNS00YjBiLWIzMDEtZTE4YTI1Y2ZiNWYxIiwiZXhwIjoxNzA4OTQ2NDQ1LCJhZG1pbiI6IjE0NjAzIn0.FshwttMN3GATRwxXLgQVz6raBbm_rGkafrtH4d6peTY
+
+
+
+
+GET http://localhost:5000/posts
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwOTAyODk2NywianRpIjoiYjhiOTI5OTMtOTc5MS00N2VlLTg2ZjMtZGNmM2YwM2M2OWE4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzA5MDI4OTY3LCJjc3JmIjoiYzdiMTc2ZGItZjNiMS00YzAzLWJkNzgtMzlmYTBlZGVjM2RmIiwiZXhwIjoxNzA5MDM2MTY3LCJhZG1pbiI6IjE0NjAzIn0.vx3UyvmJoyppsO467_iJYtuIvVMAfS-TKqiurpRWB04
+  
+POST http://localhost:5000/posts
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwOTAyODI0MiwianRpIjoiZGJlMTkwMGQtZWNkZS00MGMxLWE0M2MtYzI5NGNiMjY2OTA2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzA5MDI4MjQyLCJjc3JmIjoiNDI4OGJmMWUtNzRlNy00OTljLTlkYmEtMjJjM2M3MWFkYTIzIiwiZXhwIjoxNzA5MDM1NDQyLCJhZG1pbiI6IjE0NjAzIn0.1-XNhb3XUcBHooyqGQZGCha7IqYMt0h-9G2O0vm0NOg
+
+{
+  "post_url": "fab",
+  "post_description": "faean2"
+}
+
+
+
+
+PATCH http://localhost:5000/posts/1
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwOTAyODI0MiwianRpIjoiZGJlMTkwMGQtZWNkZS00MGMxLWE0M2MtYzI5NGNiMjY2OTA2IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzA5MDI4MjQyLCJjc3JmIjoiNDI4OGJmMWUtNzRlNy00OTljLTlkYmEtMjJjM2M3MWFkYTIzIiwiZXhwIjoxNzA5MDM1NDQyLCJhZG1pbiI6IjE0NjAzIn0.1-XNhb3XUcBHooyqGQZGCha7IqYMt0h-9G2O0vm0NOg
+
+{
+  "post_url": "maki@gmail.com",
+  "post_description": "farbean"
+}
+
+
+DELETE http://localhost:5000/posts/1
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwODk0MTM0NCwianRpIjoiZTM3NTM3ZmMtZGE1MS00YmZmLWE0NTAtNjM4YzVlZDU4ODViIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MiwibmJmIjoxNzA4OTQxMzQ0LCJjc3JmIjoiMWM3NzQ3MmEtZmU4Zi00ZWQ0LTkwYjctMzQ2OTdjNDVjZGMyIiwiZXhwIjoxNzA4OTQ4NTQ0LCJhZG1pbiI6bnVsbH0.hlt3JsLWTLBY7yGe8NlxjLrCfcKcpcAj8ZXN5bcN8SU
+
+
+
 
 
 
@@ -49,3 +98,36 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsI
 DELETE http://localhost:5000/posts/1
 Content-Type: application/json
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwODk0MTM0NCwianRpIjoiZTM3NTM3ZmMtZGE1MS00YmZmLWE0NTAtNjM4YzVlZDU4ODViIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MiwibmJmIjoxNzA4OTQxMzQ0LCJjc3JmIjoiMWM3NzQ3MmEtZmU4Zi00ZWQ0LTkwYjctMzQ2OTdjNDVjZGMyIiwiZXhwIjoxNzA4OTQ4NTQ0LCJhZG1pbiI6bnVsbH0.hlt3JsLWTLBY7yGe8NlxjLrCfcKcpcAj8ZXN5bcN8SU
+
+
+
+GET http://localhost:5000/reviews/1
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwOTAzMDA5OSwianRpIjoiMjc4Yzk5YzgtNjI4Mi00ZDg4LWE1ZDMtZWZmOWViZGVlMDgwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MiwibmJmIjoxNzA5MDMwMDk5LCJjc3JmIjoiN2VkZDBmZjktYmNhYS00N2IxLWI1MDAtYzcxNzRhOTNkNDEyIiwiZXhwIjoxNzA5MDM3Mjk5LCJhZG1pbiI6IjE0MDAwIn0.2TAcrfj5d1P8JYWjJRMAD9Gd3k2cvHIo8DNtPudaCS8
+  
+
+
+POST http://localhost:5000/reviews/3
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwOTAzMDA5OSwianRpIjoiMjc4Yzk5YzgtNjI4Mi00ZDg4LWE1ZDMtZWZmOWViZGVlMDgwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MiwibmJmIjoxNzA5MDMwMDk5LCJjc3JmIjoiN2VkZDBmZjktYmNhYS00N2IxLWI1MDAtYzcxNzRhOTNkNDEyIiwiZXhwIjoxNzA5MDM3Mjk5LCJhZG1pbiI6IjE0MDAwIn0.2TAcrfj5d1P8JYWjJRMAD9Gd3k2cvHIo8DNtPudaCS8
+  
+{
+  "text": "review 5"
+}
+
+
+
+
+PATCH http://localhost:5000/review/3
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwOTAzMDA5OSwianRpIjoiMjc4Yzk5YzgtNjI4Mi00ZDg4LWE1ZDMtZWZmOWViZGVlMDgwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MiwibmJmIjoxNzA5MDMwMDk5LCJjc3JmIjoiN2VkZDBmZjktYmNhYS00N2IxLWI1MDAtYzcxNzRhOTNkNDEyIiwiZXhwIjoxNzA5MDM3Mjk5LCJhZG1pbiI6IjE0MDAwIn0.2TAcrfj5d1P8JYWjJRMAD9Gd3k2cvHIo8DNtPudaCS8
+  
+  {
+  "text": "changed"
+}
+
+
+DELETE http://localhost:5000/reviews/1
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwODk0MTM0NCwianRpIjoiZTM3NTM3ZmMtZGE1MS00YmZmLWE0NTAtNjM4YzVlZDU4ODViIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MiwibmJmIjoxNzA4OTQxMzQ0LCJjc3JmIjoiMWM3NzQ3MmEtZmU4Zi00ZWQ0LTkwYjctMzQ2OTdjNDVjZGMyIiwiZXhwIjoxNzA4OTQ4NTQ0LCJhZG1pbiI6bnVsbH0.hlt3JsLWTLBY7yGe8NlxjLrCfcKcpcAj8ZXN5bcN8SU
+  

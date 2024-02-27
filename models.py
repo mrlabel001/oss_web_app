@@ -19,9 +19,9 @@ class User(db.Model, SerializerMixin):
     password = db.Column(db.String)
 
     #relationships
-    profile = db.relationship('Profile', back_populates='user', uselist=False)
-    posts = db.relationship('Post', back_populates='user')
-    reviews = db.relationship('Review', back_populates='user')
+    profile = db.relationship('Profile', backref='user', uselist=False)
+    posts = db.relationship('Post', backref='user', lazy=True)
+    reviews = db.relationship('Review', backref='user', lazy=True)
 
 #profile model
 class Profile(db.Model, SerializerMixin):
@@ -34,10 +34,7 @@ class Profile(db.Model, SerializerMixin):
     profession = db.Column(db.String)
     football_team = db.Column(db.String)
     about_you = db.Column(db.String)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-
-    #relationships
-    user = db.relationship('User', back_populates='profile', uselist=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), unique=True, nullable=False)
 
 #posts model
 class Post(db.Model, SerializerMixin):
@@ -46,25 +43,16 @@ class Post(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     post_url = db.Column(db.String)
     post_description = db.Column(db.String)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    review_id = db.Column(db.Integer, db.ForeignKey('reviews.id'))
-
-    #relationships
-    user = db.relationship('User', back_populates='posts')
-    review = db.relationship('Review', back_populates='posts')
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
 #reviews model
 class Review(db.Model, SerializerMixin):
-    serialize_only = ('text', 'user_id')
+    serialize_only = ('text', 'user_id', 'post_id')
     __tablename__ = 'reviews'
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    post_id = db.Column(db.Integer, db.ForeignKey('posts.id'))
-
-    #relationships
-    user = db.relationship('User', back_populates='reviews')
-    post = db.relationship('Post', back_populates='reviews')
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    post_id = db.Column(db.Integer, db.ForeignKey('posts.id'), nullable=False)
 
 class TokenBlocklist(db.Model):
     id = db.Column(db.Integer, primary_key=True)
