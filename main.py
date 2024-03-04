@@ -1,6 +1,7 @@
 #import needed dependancies
 from datetime import timedelta
 from flask import Flask
+from flask_cors import CORS
 from flask_migrate import Migrate
 from models import db
 from posts import posts_bp
@@ -12,6 +13,7 @@ from flask import Blueprint
 
 #configure my app
 app = Flask(__name__)
+CORS(app) 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SECRET_KEY'] = 'secret_key'
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(hours = 2)

@@ -112,22 +112,9 @@ Content-Type: application/json
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwOTAzMDA5OSwianRpIjoiMjc4Yzk5YzgtNjI4Mi00ZDg4LWE1ZDMtZWZmOWViZGVlMDgwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MiwibmJmIjoxNzA5MDMwMDk5LCJjc3JmIjoiN2VkZDBmZjktYmNhYS00N2IxLWI1MDAtYzcxNzRhOTNkNDEyIiwiZXhwIjoxNzA5MDM3Mjk5LCJhZG1pbiI6IjE0MDAwIn0.2TAcrfj5d1P8JYWjJRMAD9Gd3k2cvHIo8DNtPudaCS8
   
 {
-  "text": "review 5"
+  "text": "review 6"
 }
 
-
-
-
-PATCH http://localhost:5000/review/3
+DELETE http://localhost:5000/reviewdelete/3
 Content-Type: application/json
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwOTAzMDA5OSwianRpIjoiMjc4Yzk5YzgtNjI4Mi00ZDg4LWE1ZDMtZWZmOWViZGVlMDgwIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MiwibmJmIjoxNzA5MDMwMDk5LCJjc3JmIjoiN2VkZDBmZjktYmNhYS00N2IxLWI1MDAtYzcxNzRhOTNkNDEyIiwiZXhwIjoxNzA5MDM3Mjk5LCJhZG1pbiI6IjE0MDAwIn0.2TAcrfj5d1P8JYWjJRMAD9Gd3k2cvHIo8DNtPudaCS8
-  
-  {
-  "text": "changed"
-}
-
-
-DELETE http://localhost:5000/reviews/1
-Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwODk0MTM0NCwianRpIjoiZTM3NTM3ZmMtZGE1MS00YmZmLWE0NTAtNjM4YzVlZDU4ODViIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MiwibmJmIjoxNzA4OTQxMzQ0LCJjc3JmIjoiMWM3NzQ3MmEtZmU4Zi00ZWQ0LTkwYjctMzQ2OTdjNDVjZGMyIiwiZXhwIjoxNzA4OTQ4NTQ0LCJhZG1pbiI6bnVsbH0.hlt3JsLWTLBY7yGe8NlxjLrCfcKcpcAj8ZXN5bcN8SU
-  

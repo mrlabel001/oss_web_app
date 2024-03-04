@@ -15,6 +15,7 @@ class User(db.Model, SerializerMixin):
     email = db.Column(db.String)
     file_no = db.Column(db.Integer)
     year = db.Column(db.Integer)
+    status = db.Column(db.Bool)
     admin = db.Column(db.String) #special string known to admins only
     password = db.Column(db.String)
 
